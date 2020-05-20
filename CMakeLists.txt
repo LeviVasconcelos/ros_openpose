@@ -86,6 +86,9 @@ link_directories(
 add_executable(rosOpenpose
   src/rosOpenpose.cpp
   src/cameraReader.cpp)
+  
+add_dependencies(rosOpenpose ros_openpose_generate_messages_cpp)
+
 target_link_libraries(rosOpenpose
   ${OpenPose_LIBS}
   ${GFLAGS_LIBRARY}
